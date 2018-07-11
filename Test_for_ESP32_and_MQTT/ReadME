@@ -1,0 +1,13 @@
+Package in Arduino Preferences - http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+To SHH -ssh nameofPi@staticIPaddress
+
+mosquitto_sub -h localhost -t "outTopic"
+
+mosquitto_pub -h localhost -t "inTopic" -m "1"
+mosquitto_pub -h localhost -t "inTopic" -m "0"
+
+Note:
+If you use these commands on your computer (not SSHed), localhost is the static IP for the RPi.
+
+PubSubClient library - https://pubsubclient.knolleary.net
