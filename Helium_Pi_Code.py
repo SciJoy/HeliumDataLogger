@@ -76,7 +76,7 @@ client.on_connect = on_connect
 client.on_message = on_message
 client.connect('localhost', 1883, 60)
 client.loop_start()
-time.sleep(120)
+time.sleep(10)
 
 print('Script is running, press Ctrl-C to quit...')
 
@@ -91,6 +91,9 @@ while True:
         E1T = config.get(b'channel.E1T')
         E1R = config.get(b'channel.E1R')
         E1S = config.get(b'channel.E1S')
+        print(E1T)
+        print(E1R)
+        print(E1S)
         configPayloadE1 = E1T + b'-'+ E1R
         E1TString = E1T.decode("utf-8")
         E1Pin,E1ST,E1ET=E1TString.split("-")
@@ -121,9 +124,10 @@ while True:
         E3T = config.get(b'channel.E3T')
         E3R = config.get(b'channel.E3R')
         E3S = config.get(b'channel.E3S')
+        print(E3S)
         configPayloadE3 = E3T + b'-'+ E3R
         E3TString = E3T.decode("utf-8")
-        E3Pin,E23T,E3ET=E3TString.split("-")
+        E3Pin,E3ST,E3ET=E3TString.split("-")
         E3PinInt = int(E3Pin)
         dictESP3[E3PinInt] = E3S.decode("utf-8")
         print('Config Variables 3: ')
@@ -137,7 +141,7 @@ while True:
     configTracking = time.time()
 
 while True:
-    configWait = 120
+    configWait = 11120
     
     now = time.time()
     elapsed = now - configTracking
