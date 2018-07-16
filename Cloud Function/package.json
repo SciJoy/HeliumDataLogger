@@ -1,0 +1,11 @@
+
+{
+    "name": "YourFunction",
+    "version": "0.0.1",
+    "private": true,
+    "license": "Apache-2.0",
+    "author": "Google Inc.",
+    "dependencies": {
+        "@google-cloud/bigquery": "^0.9.6"
+    }
+}
